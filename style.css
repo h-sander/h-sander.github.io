@@ -7,9 +7,9 @@ body {
     background: linear-gradient(135deg, #45f74855 25%, transparent 25%) -10px 0/ 20px 20px, linear-gradient(225deg, #45f748 25%, transparent 25%) -10px 0/ 20px 20px, linear-gradient(315deg, #45f74855 25%, transparent 25%) 0px 0/ 20px 20px, linear-gradient(45deg, #45f748 25%, #e5e5f7 25%) 0px 0/ 20px 20px;}
 
 .main-wrapper {
-    width: 70vw;
+    width: 70%;
     margin: 0 auto;
-    background-color: blue;
+    background-color: black;
     border-radius: 10px;
     padding: 10px;
     color: #45f748;
