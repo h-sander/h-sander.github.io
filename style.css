@@ -1,14 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@700&display=swap');
 
 body {
+    text-align: center;
     font-family: 'Bitter', serif;
-    background-color: #e5e5f7;
-    opacity: 0.8;
-    background: linear-gradient(135deg, #45f74855 25%, transparent 25%) -10px 0/ 20px 20px, linear-gradient(225deg, #45f748 25%, transparent 25%) -10px 0/ 20px 20px, linear-gradient(315deg, #45f74855 25%, transparent 25%) 0px 0/ 20px 20px, linear-gradient(45deg, #45f748 25%, #e5e5f7 25%) 0px 0/ 20px 20px;}
+    background: url(https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+a {
+    color: inherit;
+}
 
 .main-wrapper {
     width: 70vw;
-    background-color: black;
+    margin: 0 auto;
+    background-color: #000B;
     border-radius: 10px;
     padding: 10px;
     color: #45f748;
