@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8"/>
+
+	<meta http-Equiv="Cache-Control" Content="no-cache">
+	<meta http-Equiv="Pragma" Content="no-cache">
+	<meta http-Equiv="Expires" Content="0">
+
+	<title id="titulo"></title>
+	<link rel="stylesheet" href="dash-style.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+	<link rel="shortcut icon" href="./usp-logo-azul.jpg" type="image/x-icon">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+	<header>
+
+		<!--The course/discipline name should appear here-->
+		<h1  id="course-name"></h1>
+
+		<!--USP logo on browser tab-->
+		<figure class="logo-container">
+			<img class="logo" src="./uspLogo.png">
+		</figure>
+
+	</header>
+ 
+	<!-- Everything that isn't header will be inside big-wrap -->
+	<div class="big-wrap">
+
+		<!-- I don't know why I am using both playlist-cap and list-cap divs, should review later. But it's the chapter playlist -->
+		<div class="playlist-cap">
+			<div class="list-cap">
+
+				<!-- I am using this table because of the list being aligned to the right - long story -
+				but it's exactly where it's supposed to be -->
+				<table id="list-table">
+
+					<!-- Here, it will be inserted:
+					<tr><td class="chapter-name"><a onClick="document.getElementById('vid-frame').src='https://youtube.com/embed/' + videoID + '?start=' + '${hora[`${i}`]*3600+min[`${i}`]*60+sec[`${i}`]}' + videoConfig">${capName[`${i}`]}</a></td><td class="bullet">&#8226</td></tr>
+					-->
+
+				</table>
+			</div>
+			
+			<!-- Button to go for quizz/forms frame -->
+			<div class="navigation-button" onclick="maisClick();"><a id="mais-link"  href="#quizz">Mais &#x25BC;</a></div>
+		</div>
+
+		<!-- Here we will display the video -->
+		<div class="player">
+
+			<!-- Embedded video -->
+			<iframe id="vid-frame" src="https://www.youtube.com/embed/" frameborder="0" width="100%" height="100%" allow="accelerometer; autoplay; clipboard-write" allowfullscreen></iframe>
+
+		</div>
+
+		<!-- Container for content on the right of the video -->
+		<div class="right-container">
+
+			<!-- Extra material and e-Disciplinas buttons -->	
+			<div class="buttons-container">
+				<div class="right-button"><div class="right-button-text"><a id="xtra-material-button" href="" target="_blank">Clique aqui para acessar o material de apoio da aula.</a></div></div>
+				<div class="right-button"><div class="right-button-text"><a id="moodle-button" href="" target="_blank">Clique aqui para acessar a página do curso no e-Disciplinas.</a></div></div>
+			</div>
+		
+			<!-- Video playlist. Don't know exactly why are there two divs, should review -->
+			<div id="playlist-vid" class="playlist-vid-style">
+				<div id="list-vid">
+
+					<!-- Here, it will be inserted:
+					<div class="titulo-video" onclick="myfunc('${vidIdUn}', ${i})">Aula ${i+1}</div><div class="information">${vidTitle[`${i}`]}</div><br> -->
+
+				</div>
+			</div>
+
+		</div>
+	
+
+		<!-- This is our quizz or forms frame -->
+		<iframe id="quizz" class="quizz-style" src="" width="100%" height="600px" frameborder="0">Loading…</iframe>
+
+		<!-- "Back to top" button -->
+		<div class="navigation-button" onclick="voltarAoTopoClick();"><a id="voltarAoTopo"  href="#vid-frame">Voltar ao topo &#x25B2;</a></div>
+
+		<!-- Files download buttons -->
+		<a href="./dash-files.zip" class="download-button" download>Baixar arquivos-fonte</a><br>
+		<a id="newFile" class="download-button">Baixar JS auxiliar</a><br>
+
+	</div>
+
+	<!-- Plug-in to save the file -->
+	<script type="text/javascript" src="FileSaver.js"></script>
+
+	<!-- Dash Script -->
+	<script type="text/javascript" src="dashScript.js"></script>
+
+</body>
+
+</html>

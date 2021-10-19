@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8"/>
+	<title>Criador de dash</title>
+	<link rel="stylesheet" href="./style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+	crossorigin="anonymous"></script>
+	<script src="./jquery-hoverIntent-master/jquery.hoverIntent.js"></script>
+</head>
+
+<body>
+	<div class="forms-wrap-style">
+		<div id="tab1">
+			<form action="" id="step1Form">
+
+				<label for="nome-disciplina">Nome do curso/disciplina:</label><br> <!-- Mudar action -->
+				<input type="text" id="nome-disciplina" name="nome-disciplina" class="text-input-style"
+				placeholder="Circuitos Eletrônicos I"><br>
+
+				<!-- Code below is for getting course code (e.g. SEL0309) -->
+				<!-- <label for="codigo-disciplina">Código da disciplina:</label><br>
+				<input type="text" id="codigo-disciplina" name="codigo-disciplina" class="text-input-style" 
+				placeholder="SEL0609"><br> -->
+
+
+				<label for="moodle-url">Link para o curso no e-Disciplinas:</label><br>
+				<input type="text" id="moodle-url" name="moodle-url" class="text-input-style" 
+				placeholder="https://edisciplinas.usp.br/course/view.php?id=94564"><br>
+				<label for="playlist-url">URL da playlist:</label><br>
+				<input type="text" id="playlist-url" name="playlist-url" class="text-input-style" 
+				placeholder="https://www.youtube.com/playlist?list=PLs2KVEAMZVdEJB1x7Zhz8t9_PH5QacnL4"><br>
+				
+				<div class="buttons-block">
+					<button type="button" class="button-style" onclick="nextStep()">Próximo</button>
+				</div>
+
+			</form>
+		</div>
+		
+		<div id="tab2">
+			<form action="" id="step2Form">
+
+				<!-- Here, we will insert:
+					<div class="class-block">
+					<h3>Aula ${i+1}: ${vidTitle[`${i}`]}</h3>
+					<label for="formsAula${i}">Link para questionário da aula:</label><br>
+					<input type="text" id="formsAula${i}" name="formsAula2" class="text-input-style"
+					placeholder="Link para questionário do e-Disciplinas ou Google Forms."><br>
+					<label for="matAula${i}">Link para material de apoio:</label><br>
+					<input type="text" id="matAula${i}" name="matAula${i}" class="text-input-style"
+					placeholder="Link para qualquer PDF, vídeo, site, etc."><br>
+					</div> -->
+
+				<div id="loading">
+					Carregando...
+				</div>
+			</form>
+		</div>
+
+		<div class="buttons-block" id="tab2-buttons-block">
+			<button type="button" class="button-style" onclick="prevStep()">Anterior</button>
+			<button type="button" class="button-style" onclick="formComplete()">Criar dash</button>
+		</div>
+
+	</div>
+
+	<script type="text/javascript" src ="./script.js"></script>
+</body>

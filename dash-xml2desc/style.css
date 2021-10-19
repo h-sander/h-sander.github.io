@@ -1,0 +1,75 @@
+body {
+	font-family: 'Noto Sans', sans-serif;
+	background-color: #5d222d;
+	background: url("https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1073&q=80") no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	color: #eee;
+}
+
+.forms-wrap-style {
+	width: 60%;
+	background-color: #000C;
+	margin: 6vh auto;
+	padding: 15px;
+	border-radius: 10px;
+	border-style: solid;
+	text-align: center;
+}
+
+.text-input-style {
+	margin: 10px 10px 20px;
+	padding: 0 10px;
+	width: 80%;
+	height: 45px;
+	font-size: 1.2em;
+}
+
+h3 {
+	margin-top: 0;
+	font-size: 2em;
+}
+
+label {
+	text-align: left;
+	font-size: 1.8em;
+}
+
+.buttons-block {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.button-style {
+	min-width: 100px;
+}
+
+.class-block {
+	margin: 20px;
+}
+
+.class-block:hover {
+	margin: 20px;
+	background-color: #eee5;
+	border-radius: 10px;
+}
+
+#tab1 {
+	display: block;
+}
+
+#tab2 {
+	display:  none;
+	max-height: 550px;
+	overflow-y: scroll;
+}
+
+#tab2-buttons-block {
+	display: none;
+}
+
+#loading {
+	text-align: center;
+}
