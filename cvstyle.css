@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.main-wrap {
+    width: 2480px;
+    height: 3508px;
+    margin: 0 auto;
+    padding: 150px;
+    background-color: #0d1821;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header {
+    height: 600px;
+}
+
+.photo {
+    width: 600px;
+    height: 600px;
+    float: left;
+    overflow: hidden;
+    display: inline-block;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.main-info {
+    width: 1580px;
+    height: 600px;
+    padding: 50px;
+    float: left;
+    background-color: #b4cded;
+    display: inline-block;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.main-info h1 {
+    font-size: 5em;
+    color: #344966;
+    text-transform: uppercase;
+}
+
+.main-info p {
+    font-size: 2.6em;
+    margin-top: 40px;
+    color: #0d1821; 
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.main-info .obs-head {
+    color: #344966;
+    font-size: 2em;
+}
+
+.left {
+    width: 600px;
+    height: 2608px;
+    float: left;
+    display: inline-block;
+    padding-top: 60px;
+}
+
+.vertical-line {
+    width: 8px;
+    height: 2508px;
+    float: left;
+    display: inline-block;
+    margin: 100px 0;
+    background-color: #b4cded;
+}
+
+.right {
+    width: calc(1580px - 8px);
+    height: 2608px;
+    float: left;
+    display: inline-block;
+    padding-top: 80px;
+}
+
+.left .title {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #bfcc94;
+}
+
+.left .info-block {
+    margin-bottom: 100px;
+}
+
+.left .info-block p {
+    text-align: left;
+    width: 530px;
+    margin-left: 30px;
+    font-size: 2em;
+    padding: 10px;
+    color: #bfcc94;
+}
+
+#obs {
+    font-size: 1.5em;
+}
+
+.skills-wrap {
+    width: 550px;
+    height: 360px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.skill {
+    width: 160px;
+    height: 160px;
+    padding: 10px;
+    background-color: #b4cded;
+    border-radius: 15px;
+    text-align: center;
+    color: #0d1821;
+}
+
+#js-skill {
+    background: linear-gradient(#344966 0%, #344966 20%, #b4cded 20%, #b4cded 100%);
+}
+
+#html-skill, #css-skill {
+    background: linear-gradient(#344966 0%, #344966 40%, #b4cded 40%, #b4cded 100%);
+}
+
+#github-skill {
+    background: linear-gradient(#344966 0%, #344966 50%, #b4cded 50%, #b4cded 100%);
+}
+
+#react-skill {
+    background: linear-gradient(#344966 0%, #344966 65%, #b4cded 65%, #b4cded 100%);
+} 
+
+#bootstrap-skill {
+    background: linear-gradient(#344966 0%, #344966 70%, #b4cded 70%, #b4cded 100%);
+}
+
+.left .info-block ul {
+    color: #b4cded;
+    list-style-type: none;
+}
+
+.left .info-block li{
+    margin: 20px 40px 10px;
+}
+
+#education {
+    text-align: justify;
+}
+
+.left .date {
+    font-weight: bold;
+    font-size: 2.2em;
+}
+
+.left .exp-title {
+    font-size: 2.2em;
+}
+
+.english-skill {
+    text-align: right;
+}
+
+.left .info-block .graph{
+	width: 400px;
+	height: 20px;
+    margin: 20px;
+    display: inline-block;
+}
+
+#reading, #writing {
+    background: linear-gradient(to right, #b4cded 0%, #b4cded 95%, #344966 95%, #344966 100%);
+}
+
+#listening {
+    background: linear-gradient(to right, #b4cded 0%, #b4cded 90%, #344966 90%, #344966 100%);
+}
+
+#speaking {
+    background: linear-gradient(to right, #b4cded 0%, #b4cded 85%, #344966 85%, #344966 100%);
+}
+
+.contact-info {
+    font-size: 1.7em;
+    color: #bfcc94;
+    margin: 0 25px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    bottom: 15px;
+}
+
+.right .info-block {
+    width: 1493px;
+    position: relative;
+    left: 79px;
+    border-radius: 15px;
+    background-color: #bfcc94;
+    padding: 20px 20px;
+    margin-bottom: 50px;
+}
+
+.right .title {
+    text-align: center;
+    font-size: 4em;
+    text-transform: uppercase;
+    color: #344966;
+}
+
+.right ul {
+    list-style-type: none;
+}
+
+.right li {
+    color: #0d1821;
+    font-size: 2.2em;
+    margin: 20px;
+}
+
+.right .date {
+    font-weight: bold;
+}
+
+.right .exp-title {
+    text-transform: uppercase;
+}
+
+.project-name {
+    font-style: italic;
+}
+
+.right li p {
+    color: #344966;
+}
+
+.right li p a, .header a {
+    text-decoration: underline;
+}
