@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+	<meta charset="UTF-8"/>
+	<title id="titulo"></title>
+	<link rel="stylesheet" href="xml2desc.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<header><h1>XML2desc</h1></header>
+
+<body>
+
+<div class="main">
+	<h2>Sobre</h2>
+	<p>Este programa utiliza o arquivo XML criado pelo Camtasia Studio para
+		gerar uma descrição adequada ao YouTube, com os timestamps e nomes dos
+		capítulos do vídeo.</p>
+	<h2>Como usar</h2>
+		<ul>
+			<li>Colar o texto do XML na caixa de texto da esquerda OU clicar em
+				"Carregar XML" e escolher o arquivo a partir do qual se deseja gerar
+				a descrição.</li>
+			<li>Clicar em "Gerar descrição".</li>
+			<li>Copiar a descrição gerada na caixa de texto da direita e colar na
+				descrição de seu vídeo.</li>
+		</ul>
+
+	<div class="xmlbox" id="demo">
+			<textarea id ="in" class="xmlinput" placeholder="Colar texto do XML aqui OU clicar em 'Carregar XML'"></textarea>
+
+			<textarea id="out" class="xmloutput" placeholder="A descrição gerada aparecerá aqui" readonly></textarea>
+	</div>
+
+	<div class="bottomMenu">
+
+		<div class="openfilebutton">
+			<button id="butOpenFile" type="button">Carregar XML</button>
+		</div>
+
+		<div class="createfilebutton">
+			<button onclick="myFunction()">Gerar descrição</button>
+		</div>
+
+	</div>
+
+	<footer>
+
+		<a href="./player-home.html" target="_blank">Dash Gen</a>
+
+	</footer>
+
+</div>
+
+<script>
+
+let fileHandle;
+butOpenFile.addEventListener('click', async () => {
+  // Destructure the one-element array.
+  [fileHandle] = await window.showOpenFilePicker();
+  // Do something with the file handle.
+	const file = await fileHandle.getFile();
+	const contents = await file.text();
+	//textArea.value = contents;
+	//console.log(contents);
+	document.getElementById("in").value = contents;
+});
+
+function notEqualToZero(time){
+	return time > 0;
+}
+
+function myFunction() {
+  var z = document.getElementById("in").value;
+	var x = z.substring(z.indexOf("<rdf:Seq>", z.indexOf("<rdf:Seq>")+1), z.indexOf("</rdf:Seq>", z.indexOf("</rdf:Seq>")+1));
+	console.log(x);
+	var regex1 = /name/g, regex2 = /startTime/g, ind1 = [], result1, ind2 = [], result2;
+  while ( (result1 = regex1.exec(x)) ) {
+    ind1.push(result1.index);
+  }
+	while ( (result2 = regex2.exec(x)) ) {
+		ind2.push(result2.index);
+	}
+	document.getElementById("out").innerHTML = "";
+	var y = [], t = [], th = [], tmin = [], ts = [], th_str = [], tmin_str = [], ts_str = [], i = 0, j;
+	for(j = 0; j < ind1.length; j++){
+		if(x.substring(ind1[j]+6,ind1[j]+11) != "Slide"){
+			y[i] = x.substring(ind1[j]+6,ind2[j]-8);
+			t[i] = parseInt(x.substring(ind2[j]+11, x.indexOf(`"`,ind2[j]+11)),10);
+			//console.log(x.substring(ind2[j]+11, x.indexOf(`"`,ind2[j]+11)));
+			tmin[i] = Math.floor(t[i]/60000);
+			th[i] = Math.floor(tmin[i]/60);
+			ts[i] = Math.round((t[i]/60000-Math.floor(t[i]/60000))*60);
+			console.log(t[i]);
+			th_str[i] = th[i].toString();
+			// if(th[i]<10){
+			// 	th_str[i] = "0"+tmin_str[i];
+			// }
+			tmin_str[i] = tmin[i].toString();
+			if(tmin[i]<10){
+				tmin_str[i] = "0"+tmin_str[i];
+			}
+			ts_str[i] = ts[i].toString();
+			if(ts[i]<10){
+				ts_str[i] = "0"+ts_str[i];
+			}
+			i++;
+		}
+	}
+	for(i = 0; i < y.length; i++){
+		if(th.some(notEqualToZero) === true){
+			document.getElementById("out").innerHTML += th_str[i];
+			document.getElementById("out").innerHTML += ":";
+		}
+		document.getElementById("out").innerHTML += tmin_str[i];
+		document.getElementById("out").innerHTML += ":";
+		document.getElementById("out").innerHTML += ts_str[i];
+		document.getElementById("out").innerHTML += "&nbsp";
+		document.getElementById("out").innerHTML += y[i];
+		document.getElementById("out").innerHTML += "\n";
+	}
+}
+</script>
+
+
+</body>
+
+</html>

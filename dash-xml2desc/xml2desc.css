@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: #EDE6CA;
+}
+
+header {
+	text-align: center;
+	height: 50px;
+	padding: 10px;
+	background-color: #0007;
+}
+
+body {
+  background: rgb(59,48,134);
+	background: linear-gradient(90deg, rgba(59,48,134,1) 0%, rgba(9,9,121,1) 35%, rgba(230,107,186,1) 100%);
+}
+
+p, li {
+	font-size: 20px;
+}
+
+li {
+  position: relative;
+  left: 20px;
+}
+
+.main {
+	background-color: #0007;
+	width: 50%;
+	margin: 20px auto;
+	border-radius: 10px;
+	padding: 20px;
+}
+
+.xmlbox{
+  margin: 1% auto;
+  width: 80%;
+  height: 150px;
+  background-color: #eeeeee;
+  color: #333333;
+  padding: 1%;
+  vertical-align: top;
+}
+
+
+button {
+  width: 100%;
+  color: black;
+  padding: 0 4px;
+}
+
+.bottomMenu{
+  position: relative;
+  display: inline-block;
+  left: 9%;
+}
+
+.openfilebutton {
+  float: left;
+  margin-right: 10px;
+}
+
+.createfilebutton {
+  float: left;
+}
+
+
+.xmlinput{
+  float: left;
+  height: calc(97% - 5px);
+  width: calc(48% - 5px);
+  resize: none;
+}
+
+.xmloutput{
+  float: right;
+  height: calc(97% - 5px);
+  width: calc(48% - 5px);
+  resize: none;
+}
+
+.xmlinput, .xmloutput {
+  color: black;
+  padding: 5px;
+}
